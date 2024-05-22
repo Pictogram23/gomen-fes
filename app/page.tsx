@@ -1,38 +1,48 @@
 'use client'
-import { TextField } from '@mui/material'
+import { Container, TextField } from '@mui/material'
 import Grid from '@mui/material/Grid'
 import { useState } from 'react'
 import PosterCard from './_components/PosterCard'
 
 type Poster = {
   name: string
-  url: string
+  twitter_id: string
+  roll: string
+  exception: string
+  others: string
+  credit: string
+  earning: string
+  original: string
   comment: string
 }
 
 export default function Home() {
   const [keyword, setKeyword] = useState<string>('')
-  const posterlist: Poster[] = require('./posterlist.json')
+  const posterlist: Poster[] = require('./gomen-fes-posterlist.json')
   return (
     <main>
-      <h1>素材を提供してくれた素敵な人たち</h1>
-      <TextField
-        sx={{ mb: 5 }}
-        label='Search'
-        variant='outlined'
-        onChange={(e) => setKeyword(e.target.value)}
-      />
-      <Grid container spacing={2} justifyContent='center'>
-        {posterlist.map((poster) => {
-          if (poster.name.indexOf(keyword) != -1) {
-            return (
-              <>
-                <PosterCard name={poster.name} url={poster.url} comment={poster.comment} />
-              </>
-            )
-          }
-        })}
-      </Grid>
+      <Container>
+        <h1>素材を提供してくれた素敵な人たち</h1>
+        <TextField
+          sx={{ mb: 5 }}
+          label='Search'
+          variant='outlined'
+          onChange={(e) => setKeyword(e.target.value)}
+        />
+      </Container>
+      <Container>
+        <Grid container spacing={2} justifyContent='center'>
+          {posterlist.map((poster, index) => {
+            if (poster.name.indexOf(keyword) != -1 || poster.twitter_id.indexOf(keyword) != -1) {
+              return (
+                <Grid key={index}>
+                  <PosterCard name={poster.name} twitter_id={poster.twitter_id} />
+                </Grid>
+              )
+            }
+          })}
+        </Grid>
+      </Container>
     </main>
   )
 }
