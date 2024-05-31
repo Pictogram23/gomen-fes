@@ -36,7 +36,17 @@ export default function Home() {
             if (poster.name.indexOf(keyword) != -1 || poster.twitter_id.indexOf(keyword) != -1) {
               return (
                 <Grid key={index}>
-                  <PosterCard name={poster.name} twitter_id={poster.twitter_id} />
+                  <PosterCard
+                    name={poster.name}
+                    twitter_id={poster.twitter_id}
+                    roll={poster.roll}
+                    exception={poster.exception}
+                    others={poster.others}
+                    credit={poster.credit}
+                    earning={poster.earning}
+                    original={poster.original}
+                    comment={poster.comment}
+                  />
                 </Grid>
               )
             }
