@@ -14,6 +14,7 @@ type Poster = {
   earning: string
   original: string
   comment: string
+  furigana: string
 }
 
 export default function Home() {
@@ -33,7 +34,11 @@ export default function Home() {
       <Container>
         <Grid container spacing={2} justifyContent='center'>
           {posterlist.map((poster, index) => {
-            if (poster.name.indexOf(keyword) != -1 || poster.twitter_id.indexOf(keyword) != -1) {
+            if (
+              poster.name.indexOf(keyword) != -1 ||
+              poster.twitter_id.indexOf(keyword) != -1 ||
+              poster.furigana.indexOf(keyword) != -1
+            ) {
               return (
                 <Grid key={index}>
                   <PosterCard
