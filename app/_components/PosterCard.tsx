@@ -27,6 +27,7 @@ interface PosterCardProps {
   earning: string
   original: string
   comment: string
+  best: string
 }
 
 const theme = createTheme({
@@ -51,6 +52,7 @@ const PosterCard = ({
   earning,
   original,
   comment,
+  best,
 }: PosterCardProps) => {
   const [open, setOpen] = React.useState<boolean>(false)
   const row_key_list = [
@@ -61,8 +63,9 @@ const PosterCard = ({
     '収益化',
     'オリジナルライセンス',
     'コメント',
+    '一番パロディしてほしい曲',
   ]
-  const row_content_list = [roll, exception, others, credit, earning, original, comment]
+  const row_content_list = [roll, exception, others, credit, earning, original, comment, best]
   const card = (
     <React.Fragment>
       <ButtonBase onClick={() => setOpen(true)}>
@@ -71,17 +74,14 @@ const PosterCard = ({
             <Avatar
               src={'/icons/' + twitter_id + '.jpg'}
               variant='square'
-              sx={{ minWidth: 75, minHeight: 75 }}
+              sx={{ minWidth: 75, minHeight: 75, mr: 1 }}
             />
             <Box display='flex' alignItems='center'>
-              <Box minWidth={200}>
+              <Box width={200}>
                 <Typography variant='body1' mt={0.5}>
                   {name}
                 </Typography>
-                <Link
-                  /*href={'https://x.com/' + twitter_id}*/ sx={{ mb: 1.5 }}
-                  color={'text.secondary'}
-                >
+                <Link sx={{ mb: 1.5 }} color={'text.secondary'}>
                   {twitter_id}
                 </Link>
               </Box>
@@ -120,19 +120,30 @@ const PosterCard = ({
               <Avatar
                 src={'/icons/' + twitter_id + '.jpg'}
                 variant='square'
-                sx={{ minWidth: 150, minHeight: 150, mr: { xs: 0, sm: 5 }, mb: { xs: 3, sm: 0 } }}
+                sx={{
+                  minWidth: 150,
+                  minHeight: 150,
+                  mr: { xs: 0, md: 5 },
+                  mb: { xs: 3, md: 0 },
+                }}
               />
               <Box display='flex' alignItems='center'>
-                <Box>
+                <Box width={{ xs: '80vw', md: '100%' }}>
                   <Typography variant='h3'>{name}</Typography>
-                  <Link
-                    variant='h6'
-                    href={'https://x.com/' + twitter_id}
-                    sx={{ mb: 1.5 }}
-                    color={'text.secondary'}
-                  >
-                    {twitter_id}
-                  </Link>
+                  {(twitter_id.match(/@/g) || []).length != 1 ? (
+                    <Link variant='h6' sx={{ mb: 1.5 }} color={'text.secondary'}>
+                      {twitter_id.slice(1)}
+                    </Link>
+                  ) : (
+                    <Link
+                      variant='h6'
+                      href={'https://x.com/' + twitter_id}
+                      sx={{ mb: 1.5 }}
+                      color={'text.secondary'}
+                    >
+                      {twitter_id}
+                    </Link>
+                  )}
                 </Box>
               </Box>
             </Grid>
@@ -155,7 +166,7 @@ const PosterCard = ({
           </Box>
         </Box>
       </Modal>
-      <Box sx={{ minWidth: 275, padding: 1 }}>
+      <Box sx={{ minWdth: 275, padding: 1 }}>
         <Card variant='outlined'>{card}</Card>
       </Box>
     </>

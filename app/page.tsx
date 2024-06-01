@@ -15,6 +15,7 @@ type Poster = {
   original: string
   comment: string
   furigana: string
+  best: string
 }
 
 export default function Home() {
@@ -51,6 +52,7 @@ export default function Home() {
                     earning={poster.earning}
                     original={poster.original}
                     comment={poster.comment}
+                    best={poster.best}
                   />
                 </Grid>
               )
