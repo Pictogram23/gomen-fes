@@ -130,9 +130,9 @@ const PosterCard = ({
               <Box display='flex' alignItems='center'>
                 <Box width={{ xs: '80vw', md: '100%' }}>
                   <Typography variant='h3'>{name}</Typography>
-                  {(twitter_id.match(/@/g) || []).length != 1 ? (
+                  {twitter_id.indexOf('@') != 0 ? (
                     <Link variant='h6' sx={{ mb: 1.5 }} color={'text.secondary'}>
-                      {twitter_id.slice(1)}
+                      {twitter_id}
                     </Link>
                   ) : (
                     <Link
