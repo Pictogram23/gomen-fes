@@ -37,7 +37,7 @@ const theme = createTheme({
     button: {
       textTransform: 'none',
     },
-    fontSize: 16,
+    fontSize: 18,
     fontFamily: ['Noto Sans JP', 'sans-serif'].join(','),
   },
   components: {
@@ -100,12 +100,13 @@ export default function Home() {
                   <Button color='inherit' href='#home'>
                     HOME
                   </Button>
-                  <Button color='inherit' href='#about'>
-                    ABOUT
-                  </Button>
                   <Button color='inherit' href='#join'>
                     JOIN
                   </Button>
+                  <Button color='inherit' href='#about'>
+                    ABOUT
+                  </Button>
+
                   <Button color='inherit' href='#member'>
                     MEMBER
                   </Button>
@@ -156,6 +157,8 @@ export default function Home() {
             <Typography variant='h4' paddingTop={10}>
               告知動画
             </Typography>
+          </div>
+          <div id='join'>
             <Container sx={{ paddingTop: 10 }}>
               <Link href='https://forms.gle/Hjzq8X5EYU72t8xRA' variant='h5'>
                 パロディ元「応募」はこちら！
@@ -166,11 +169,33 @@ export default function Home() {
               パロディ元「推薦」はこちら！
             </Link>
           </div>
+          <div id='about'>
+            <Typography variant='h4' paddingTop={10}>
+              概要
+            </Typography>
+            <Container sx={{ width: '60vw' }}>
+              <Typography variant='subtitle1' paddingTop={1}>
+                投稿祭の運営が
+                <span style={{ fontWeight: 'bold' }}>
+                  事前にボカロPさんら(絵師さん等も含む)の方々に許可を取り
+                </span>
+                、 許可を取れた
+                <span style={{ fontWeight: 'bold' }}>
+                  ボカロPさんの曲のパロディをボカロP、絵師、動画師、調声師など みんなで行おう
+                </span>
+                という投稿祭です。よって、
+                <span style={{ fontWeight: 'bold' }}>
+                  著作権侵害などで訴えられる心配は
+                  ありません。パロディは些細なもの含めどんな形でも構いません！
+                </span>
+              </Typography>
+            </Container>
+          </div>
           <div id='member'>
             <Toolbar />
             <Container>
               <Typography variant='h4' paddingBottom={3} paddingTop={3}>
-                素材を提供してくれた素敵な人たち
+                素材を提供してくれた素敵な方たち
               </Typography>
               <TextField
                 sx={{ mb: 5 }}
@@ -208,6 +233,41 @@ export default function Home() {
               </Grid>
             </Container>
           </div>
+          <div id='rule'>
+            <Container sx={{ paddingTop: 10 }}>
+              <Link href='#' variant='h5'>
+                ルール
+              </Link>
+            </Container>
+          </div>
+          <div id='faq'>
+            <Container sx={{ paddingTop: 10 }}>
+              <Link href='#' variant='h5'>
+                FAQ
+              </Link>
+            </Container>
+          </div>
+          <footer>
+            <AppBar
+              component='footer'
+              position='static'
+              sx={{ backgroundColor: 'black', marginTop: 10 }}
+            >
+              <Container maxWidth='md'>
+                <Container sx={{ padding: 3 }}>
+                  <Link href='#' variant='body1'>
+                    X(旧Twitter)
+                  </Link>
+                  <Link href='#' variant='body1' padding={3}>
+                    TwiPla
+                  </Link>
+                </Container>
+                <Box sx={{ textAlign: 'center', paddingBottom: 3 }}>
+                  <Typography>©2024 しらたま</Typography>
+                </Box>
+              </Container>
+            </AppBar>
+          </footer>
         </main>
       </ThemeProvider>
     </>
