@@ -135,14 +135,15 @@ const PosterCard = ({
                       {twitter_id}
                     </Link>
                   ) : (
-                    <Link
-                      variant='h6'
+                    <a
                       href={'https://x.com/' + twitter_id}
-                      sx={{ mb: 1.5 }}
-                      color={'text.secondary'}
+                      target='_blank'
+                      style={{ textDecoration: 'none' }}
                     >
-                      {twitter_id}
-                    </Link>
+                      <Link variant='h6' sx={{ mb: 1.5 }} color={'text.secondary'}>
+                        {twitter_id}
+                      </Link>
+                    </a>
                   )}
                 </Box>
               </Box>

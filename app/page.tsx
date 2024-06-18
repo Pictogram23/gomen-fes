@@ -1,17 +1,25 @@
 'use client'
+import DehazeIcon from '@mui/icons-material/Dehaze'
 import {
   AppBar,
   Box,
   Button,
   Container,
   CssBaseline,
+  Drawer,
+  IconButton,
   Link,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
   TextField,
   ThemeProvider,
   Toolbar,
   Typography,
   colors,
   createTheme,
+  useMediaQuery,
 } from '@mui/material'
 import Grid from '@mui/material/Grid'
 import { useEffect, useState } from 'react'
@@ -73,7 +81,9 @@ const theme = createTheme({
 export default function Home() {
   const [keyword, setKeyword] = useState<string>('')
   const [pickUp, setPickUp] = useState<Poster>()
+  const [drawerOpen, setDrawerOpen] = useState<boolean>(false)
   const posterlist: Poster[] = require('./gomen-fes-posterlist.json')
+  const matches: boolean = useMediaQuery('(min-width:600px)')
 
   useEffect(() => {
     if (pickUp == null) {
@@ -97,25 +107,53 @@ export default function Home() {
                     </Typography>
                   </Box>
                   <div style={{ flexGrow: 1 }}></div>
-                  <Button color='inherit' href='#home'>
-                    HOME
-                  </Button>
-                  <Button color='inherit' href='#join'>
-                    JOIN
-                  </Button>
-                  <Button color='inherit' href='#about'>
-                    ABOUT
-                  </Button>
+                  {matches ? (
+                    <>
+                      <Button color='inherit' href='#home'>
+                        HOME
+                      </Button>
+                      <Button color='inherit' href='#join'>
+                        JOIN
+                      </Button>
+                      <Button color='inherit' href='#about'>
+                        ABOUT
+                      </Button>
 
-                  <Button color='inherit' href='#member'>
-                    MEMBER
-                  </Button>
-                  <Button color='inherit' href='#rule'>
-                    RULE
-                  </Button>
-                  <Button color='inherit' href='#faq'>
-                    FAQ
-                  </Button>
+                      <Button color='inherit' href='#member'>
+                        MEMBER
+                      </Button>
+                      <Button color='inherit' href='#rule'>
+                        RULE
+                      </Button>
+                      <Button color='inherit' href='#faq'>
+                        FAQ
+                      </Button>
+                    </>
+                  ) : (
+                    <>
+                      <IconButton onClick={() => setDrawerOpen(true)}>
+                        <DehazeIcon sx={{ color: 'white' }} />
+                      </IconButton>
+                      <Drawer open={drawerOpen} onClose={() => setDrawerOpen(false)}>
+                        <Box sx={{ width: 250 }} onClick={() => setDrawerOpen(false)}>
+                          {[
+                            ['HOME', '#home'],
+                            ['JOIN', '#join'],
+                            ['ABOUT', '#about'],
+                            ['MEMBER', '#member'],
+                            ['RULE', '#rule'],
+                            ['FAQ', '#faq'],
+                          ].map((props) => (
+                            <ListItem key={props[0]} disablePadding>
+                              <ListItemButton href={props[1]}>
+                                <ListItemText primary={props[0]} />
+                              </ListItemButton>
+                            </ListItem>
+                          ))}
+                        </Box>
+                      </Drawer>
+                    </>
+                  )}
                 </Toolbar>
               </AppBar>
             </Box>
@@ -160,20 +198,34 @@ export default function Home() {
           </div>
           <div id='join'>
             <Container sx={{ paddingTop: 10 }}>
-              <Link href='https://forms.gle/Hjzq8X5EYU72t8xRA' variant='h5'>
-                パロディ元「応募」はこちら！
-              </Link>
+              <a
+                href='https://forms.gle/Hjzq8X5EYU72t8xRA'
+                target='_blank'
+                style={{ textDecoration: 'none' }}
+              >
+                <Link variant='h5'>パロディ元「応募」はこちら！</Link>
+              </a>
             </Container>
             <br />
-            <Link href='https://forms.gle/q3tGoMsgwjsxYnW5A' variant='h5'>
-              パロディ元「推薦」はこちら！
-            </Link>
+            <a
+              href='https://forms.gle/q3tGoMsgwjsxYnW5A'
+              target='_blank'
+              style={{ textDecoration: 'none' }}
+            >
+              <Link variant='h5'>パロディ元「推薦」はこちら！</Link>
+            </a>
           </div>
           <div id='about'>
             <Typography variant='h4' paddingTop={10}>
               概要
             </Typography>
-            <Container sx={{ width: '60vw' }}>
+            <Container
+              sx={{
+                '@media screen and (min-width:1025px)': {
+                  width: '60vw',
+                },
+              }}
+            >
               <Typography variant='subtitle1' paddingTop={1}>
                 投稿祭の運営が
                 <span style={{ fontWeight: 'bold' }}>
