@@ -198,14 +198,22 @@ export default function Home() {
           </div>
           <div id='join'>
             <Container sx={{ paddingTop: 10 }}>
-              <Link href='https://forms.gle/Hjzq8X5EYU72t8xRA' variant='h5'>
-                パロディ元「応募」はこちら！
-              </Link>
+              <a
+                href='https://forms.gle/Hjzq8X5EYU72t8xRA'
+                target='_blank'
+                style={{ textDecoration: 'none' }}
+              >
+                <Link variant='h5'>パロディ元「応募」はこちら！</Link>
+              </a>
             </Container>
             <br />
-            <Link href='https://forms.gle/q3tGoMsgwjsxYnW5A' variant='h5'>
-              パロディ元「推薦」はこちら！
-            </Link>
+            <a
+              href='https://forms.gle/q3tGoMsgwjsxYnW5A'
+              target='_blank'
+              style={{ textDecoration: 'none' }}
+            >
+              <Link variant='h5'>パロディ元「推薦」はこちら！</Link>
+            </a>
           </div>
           <div id='about'>
             <Typography variant='h4' paddingTop={10}>
