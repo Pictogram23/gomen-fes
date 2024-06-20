@@ -194,12 +194,12 @@ const PosterCard = ({
                     </TableCell>
                     <TableCell align='center'>
                       <Link href={best_link} target='_blank'>
-                        {row_content_list[8]}
+                        {row_content_list[9]}
                       </Link>
                     </TableCell>
                   </TableRow>
                   {row_key_list.map((value, index) => {
-                    if (index == 8) {
+                    if (index == 9) {
                       return
                     }
                     return (
