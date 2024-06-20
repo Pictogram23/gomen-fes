@@ -29,6 +29,7 @@ interface PosterCardProps {
   others: string
   credit: string
   earning: string
+  after: string
   original: string
   comment: string
   best: string
@@ -58,6 +59,7 @@ const PosterCard = ({
   others,
   credit,
   earning,
+  after,
   original,
   comment,
   best,
@@ -73,6 +75,7 @@ const PosterCard = ({
     'ニコニコ以外への投稿',
     'クレジットの記載',
     '収益化',
+    '応募後に投稿された曲',
     'オリジナルライセンス',
     'コメント',
     '一番パロディしてほしい曲',
@@ -84,6 +87,7 @@ const PosterCard = ({
     others,
     credit,
     earning,
+    after,
     original,
     comment,
     best,

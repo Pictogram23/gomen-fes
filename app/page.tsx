@@ -34,6 +34,7 @@ type Poster = {
   others: string
   credit: string
   earning: string
+  after: string
   original: string
   comment: string
   furigana: string
@@ -185,6 +186,7 @@ export default function Home() {
                   others={pickUp.others}
                   credit={pickUp.credit}
                   earning={pickUp.earning}
+                  after={pickUp.after}
                   original={pickUp.original}
                   comment={pickUp.comment}
                   best={pickUp.best}
@@ -274,6 +276,7 @@ export default function Home() {
                           others={poster.others}
                           credit={poster.credit}
                           earning={poster.earning}
+                          after={poster.after}
                           original={poster.original}
                           comment={poster.comment}
                           best={poster.best}
