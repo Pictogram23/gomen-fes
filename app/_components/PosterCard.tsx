@@ -88,7 +88,7 @@ const PosterCard = ({
     '応募後に投稿された曲',
     'オリジナルライセンス',
     'コメント',
-    '一番パロディしてほしい曲',
+    'パロディ可能な代表曲',
   ]
   const row_content_list = [
     roll,

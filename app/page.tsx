@@ -294,14 +294,14 @@ export default function Home() {
           <div id='rule'>
             <Container sx={{ paddingTop: 10 }}>
               <Link href='#' variant='h5'>
-                ルール
+                ルール(準備中)
               </Link>
             </Container>
           </div>
           <div id='faq'>
             <Container sx={{ paddingTop: 10 }}>
               <Link href='#' variant='h5'>
-                FAQ
+                FAQ(準備中)
               </Link>
             </Container>
           </div>
@@ -326,7 +326,7 @@ export default function Home() {
                   </Link>
                 </Container>
                 <Box sx={{ textAlign: 'center', paddingBottom: 3 }}>
-                  <Typography>©2024 しらたま</Typography>
+                  <Typography>©2024 しらたま(蛮族P)</Typography>
                 </Box>
               </Container>
             </AppBar>
