@@ -234,7 +234,14 @@ const PosterCard = ({
                 ) : (
                   <List sx={{ minWidth: '100%' }}>
                     <ListItem>
-                      <ListItemText primary={row_key_list[9]} secondary={row_content_list[9]} />
+                      <ListItemText
+                        primary={row_key_list[9]}
+                        secondary={
+                          <Link href={best_link} target='_blank'>
+                            {row_content_list[9]}
+                          </Link>
+                        }
+                      />
                     </ListItem>
                     {row_key_list.map((value, index) => {
                       if (index == 9) {
