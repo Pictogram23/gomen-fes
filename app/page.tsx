@@ -11,7 +11,6 @@ import {
   Link,
   ListItem,
   ListItemButton,
-  ListItemIcon,
   ListItemText,
   TextField,
   ThemeProvider,
@@ -38,6 +37,9 @@ type Poster = {
   comment: string
   furigana: string
   best: string
+  best_link: string
+  niconico: string
+  youtube: string
 }
 
 const theme = createTheme({
@@ -184,6 +186,9 @@ export default function Home() {
                   original={pickUp.original}
                   comment={pickUp.comment}
                   best={pickUp.best}
+                  best_link={pickUp.best_link}
+                  niconico={pickUp.niconico}
+                  youtube={pickUp.youtube}
                 />
               ) : (
                 <></>
@@ -198,22 +203,14 @@ export default function Home() {
           </div>
           <div id='join'>
             <Container sx={{ paddingTop: 10 }}>
-              <a
-                href='https://forms.gle/Hjzq8X5EYU72t8xRA'
-                target='_blank'
-                style={{ textDecoration: 'none' }}
-              >
-                <Link variant='h5'>パロディ元「応募」はこちら！</Link>
-              </a>
+              <Link href='https://forms.gle/Hjzq8X5EYU72t8xRA' target='_blank' variant='h5'>
+                パロディ元「応募」はこちら！
+              </Link>
             </Container>
             <br />
-            <a
-              href='https://forms.gle/q3tGoMsgwjsxYnW5A'
-              target='_blank'
-              style={{ textDecoration: 'none' }}
-            >
-              <Link variant='h5'>パロディ元「推薦」はこちら！</Link>
-            </a>
+            <Link href='https://forms.gle/q3tGoMsgwjsxYnW5A' target='_blank' variant='h5'>
+              パロディ元「推薦」はこちら！
+            </Link>
           </div>
           <div id='about'>
             <Typography variant='h4' paddingTop={10}>
@@ -277,6 +274,9 @@ export default function Home() {
                           original={poster.original}
                           comment={poster.comment}
                           best={poster.best}
+                          best_link={poster.best_link}
+                          niconico={poster.niconico}
+                          youtube={poster.youtube}
                         />
                       </Grid>
                     )

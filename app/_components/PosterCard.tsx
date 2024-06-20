@@ -1,9 +1,12 @@
 import CloseIcon from '@mui/icons-material/Close'
+import DesktopWindowsIcon from '@mui/icons-material/DesktopWindows'
+import XIcon from '@mui/icons-material/X'
+import YouTubeIcon from '@mui/icons-material/YouTube'
 import {
   Avatar,
-  Button,
   ButtonBase,
   Grid,
+  IconButton,
   Link,
   Modal,
   TableBody,
@@ -28,6 +31,9 @@ interface PosterCardProps {
   original: string
   comment: string
   best: string
+  best_link: string
+  niconico: string
+  youtube: string
 }
 
 const theme = createTheme({
@@ -53,6 +59,9 @@ const PosterCard = ({
   original,
   comment,
   best,
+  best_link,
+  niconico,
+  youtube,
 }: PosterCardProps) => {
   const [open, setOpen] = React.useState<boolean>(false)
   const row_key_list = [
@@ -65,7 +74,19 @@ const PosterCard = ({
     'コメント',
     '一番パロディしてほしい曲',
   ]
-  const row_content_list = [roll, exception, others, credit, earning, original, comment, best]
+  const row_content_list = [
+    roll,
+    exception,
+    others,
+    credit,
+    earning,
+    original,
+    comment,
+    best,
+    best_link,
+    niconico,
+    youtube,
+  ]
   const card = (
     <React.Fragment>
       <ButtonBase onClick={() => setOpen(true)}>
@@ -135,15 +156,23 @@ const PosterCard = ({
                       {twitter_id}
                     </Link>
                   ) : (
-                    <a
-                      href={'https://x.com/' + twitter_id}
-                      target='_blank'
-                      style={{ textDecoration: 'none' }}
-                    >
-                      <Link variant='h6' sx={{ mb: 1.5 }} color={'text.secondary'}>
-                        {twitter_id}
-                      </Link>
-                    </a>
+                    <>
+                      {twitter_id != '' && (
+                        <IconButton href={'https://x.com/' + twitter_id} target='_blank'>
+                          <XIcon sx={{ color: 'black' }} />
+                        </IconButton>
+                      )}
+                      {niconico != '' && (
+                        <IconButton href={niconico} target='_blank'>
+                          <DesktopWindowsIcon sx={{ color: 'black' }} />
+                        </IconButton>
+                      )}
+                      {youtube != '' && (
+                        <IconButton href={youtube} target='_blank'>
+                          <YouTubeIcon sx={{ color: 'red' }} />
+                        </IconButton>
+                      )}
+                    </>
                   )}
                 </Box>
               </Box>
