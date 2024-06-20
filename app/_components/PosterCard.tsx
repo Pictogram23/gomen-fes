@@ -1,14 +1,15 @@
 import CloseIcon from '@mui/icons-material/Close'
-import DesktopWindowsIcon from '@mui/icons-material/DesktopWindows'
 import XIcon from '@mui/icons-material/X'
 import YouTubeIcon from '@mui/icons-material/YouTube'
 import {
   Avatar,
   ButtonBase,
   Grid,
+  Icon,
   IconButton,
   Link,
   Modal,
+  SvgIcon,
   TableBody,
   TableCell,
   TableRow,
@@ -19,6 +20,7 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import * as React from 'react'
+import NiconicoIcon from '../niconico.svg'
 
 interface PosterCardProps {
   name: string
@@ -172,7 +174,11 @@ const PosterCard = ({
                       )}
                       {niconico != '' && (
                         <IconButton href={niconico} target='_blank'>
-                          <DesktopWindowsIcon sx={{ color: 'black' }} />
+                          <SvgIcon
+                            component={NiconicoIcon}
+                            sx={{ color: 'black' }}
+                            inheritViewBox
+                          />
                         </IconButton>
                       )}
                       {youtube != '' && (
