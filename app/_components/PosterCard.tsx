@@ -8,12 +8,19 @@ import {
   Icon,
   IconButton,
   Link,
+  List,
+  ListItem,
+  ListItemText,
   Modal,
+  Paper,
   SvgIcon,
+  Table,
   TableBody,
   TableCell,
+  TableContainer,
   TableRow,
   createTheme,
+  useMediaQuery,
 } from '@mui/material'
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -70,6 +77,7 @@ const PosterCard = ({
   youtube,
 }: PosterCardProps) => {
   const [open, setOpen] = React.useState<boolean>(false)
+  const matches: boolean = useMediaQuery('(min-width:768px)')
   const row_key_list = [
     '担当',
     'パロディ禁止曲',
@@ -131,8 +139,8 @@ const PosterCard = ({
             top: '50%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
-            width: '80vw',
-            height: '80vh',
+            width: '90vw',
+            height: '90vh',
             overflowY: 'scroll',
             bgcolor: 'background.paper',
             border: '2px solid #000',
@@ -192,32 +200,58 @@ const PosterCard = ({
               </Box>
             </Grid>
             <Grid container justifyContent='center' mt={5}>
-              <Box width={{ xs: '100%', sm: '75%', lg: '50%' }} display='flex' alignItems='center'>
-                <TableBody>
-                  <TableRow>
-                    <TableCell width='60%' component='th' scope='row'>
-                      一番パロディしてほしい曲
-                    </TableCell>
-                    <TableCell align='center'>
-                      <Link href={best_link} target='_blank'>
-                        {row_content_list[9]}
-                      </Link>
-                    </TableCell>
-                  </TableRow>
-                  {row_key_list.map((value, index) => {
-                    if (index == 9) {
-                      return
-                    }
-                    return (
-                      <TableRow key={index}>
-                        <TableCell width='60%' component='th' scope='row'>
-                          {value}
-                        </TableCell>
-                        <TableCell align='center'>{row_content_list[index]}</TableCell>
-                      </TableRow>
-                    )
-                  })}
-                </TableBody>
+              <Box width={{ xs: '100%', sm: '95%', lg: '60%' }} display='flex' alignItems='center'>
+                {matches ? (
+                  <TableContainer>
+                    <Table sx={{ minWidth: '100%' }}>
+                      <TableBody>
+                        <TableRow>
+                          <TableCell align='left' width={'50%'} component='th' scope='row'>
+                            {row_key_list[9]}
+                          </TableCell>
+                          <TableCell align='center'>
+                            <Link href={best_link} target='_blank'>
+                              {row_content_list[9]}
+                            </Link>
+                          </TableCell>
+                        </TableRow>
+                        {row_key_list.map((value, index) => {
+                          if (index == 9) {
+                            return
+                          }
+                          return (
+                            <TableRow key={index}>
+                              <TableCell align='left' width={'50%'} component='th' scope='row'>
+                                {value}
+                              </TableCell>
+                              <TableCell align='center'>{row_content_list[index]}</TableCell>
+                            </TableRow>
+                          )
+                        })}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
+                ) : (
+                  <List sx={{ minWidth: '100%' }}>
+                    <ListItem>
+                      <ListItemText primary={row_key_list[9]} secondary={row_content_list[9]} />
+                    </ListItem>
+                    {row_key_list.map((value, index) => {
+                      if (index == 9) {
+                        return
+                      }
+                      return (
+                        <ListItem key={index}>
+                          {row_content_list[index] == '' ? (
+                            <ListItemText primary={value} secondary='なし' />
+                          ) : (
+                            <ListItemText primary={value} secondary={row_content_list[index]} />
+                          )}
+                        </ListItem>
+                      )
+                    })}
+                  </List>
+                )}
               </Box>
             </Grid>
           </Box>
