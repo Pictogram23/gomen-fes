@@ -313,10 +313,15 @@ export default function Home() {
             >
               <Container maxWidth='md'>
                 <Container sx={{ padding: 3 }}>
-                  <Link href='https://x.com/gomennasai_fes' variant='body1'>
+                  <Link href='https://x.com/gomennasai_fes' target='_blank' variant='body1'>
                     X(旧Twitter)
                   </Link>
-                  <Link href='https://twipla.jp/events/612120' variant='body1' padding={3}>
+                  <Link
+                    href='https://twipla.jp/events/612120'
+                    target='_blank'
+                    variant='body1'
+                    padding={3}
+                  >
                     TwiPla
                   </Link>
                 </Container>
