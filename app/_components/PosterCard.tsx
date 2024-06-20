@@ -180,7 +180,20 @@ const PosterCard = ({
             <Grid container justifyContent='center' mt={5}>
               <Box width={{ xs: '100%', sm: '75%', lg: '50%' }} display='flex' alignItems='center'>
                 <TableBody>
+                  <TableRow>
+                    <TableCell width='60%' component='th' scope='row'>
+                      一番パロディしてほしい曲
+                    </TableCell>
+                    <TableCell align='center'>
+                      <Link href={best_link} target='_blank'>
+                        {row_content_list[7]}
+                      </Link>
+                    </TableCell>
+                  </TableRow>
                   {row_key_list.map((value, index) => {
+                    if (index == 7) {
+                      return
+                    }
                     return (
                       <TableRow key={index}>
                         <TableCell width='60%' component='th' scope='row'>
