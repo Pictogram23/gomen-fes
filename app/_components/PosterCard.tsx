@@ -25,6 +25,7 @@ interface PosterCardProps {
   twitter_id: string
   roll: string
   exception: string
+  include: string
   others: string
   credit: string
   earning: string
@@ -53,6 +54,7 @@ const PosterCard = ({
   twitter_id,
   roll,
   exception,
+  include,
   others,
   credit,
   earning,
@@ -67,6 +69,7 @@ const PosterCard = ({
   const row_key_list = [
     '担当',
     'パロディ禁止曲',
+    'パロディが含まれる曲',
     'ニコニコ以外への投稿',
     'クレジットの記載',
     '収益化',
@@ -77,6 +80,7 @@ const PosterCard = ({
   const row_content_list = [
     roll,
     exception,
+    include,
     others,
     credit,
     earning,
@@ -186,12 +190,12 @@ const PosterCard = ({
                     </TableCell>
                     <TableCell align='center'>
                       <Link href={best_link} target='_blank'>
-                        {row_content_list[7]}
+                        {row_content_list[8]}
                       </Link>
                     </TableCell>
                   </TableRow>
                   {row_key_list.map((value, index) => {
-                    if (index == 7) {
+                    if (index == 8) {
                       return
                     }
                     return (

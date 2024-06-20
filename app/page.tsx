@@ -30,6 +30,7 @@ type Poster = {
   twitter_id: string
   roll: string
   exception: string
+  include: string
   others: string
   credit: string
   earning: string
@@ -180,6 +181,7 @@ export default function Home() {
                   twitter_id={pickUp.twitter_id}
                   roll={pickUp.roll}
                   exception={pickUp.exception}
+                  include={pickUp.include}
                   others={pickUp.others}
                   credit={pickUp.credit}
                   earning={pickUp.earning}
@@ -268,6 +270,7 @@ export default function Home() {
                           twitter_id={poster.twitter_id}
                           roll={poster.roll}
                           exception={poster.exception}
+                          include={poster.include}
                           others={poster.others}
                           credit={poster.credit}
                           earning={poster.earning}
