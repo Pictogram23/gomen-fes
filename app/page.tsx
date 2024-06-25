@@ -248,7 +248,7 @@ export default function Home() {
             <Toolbar />
             <Container>
               <Typography variant='h4' paddingBottom={3} paddingTop={3}>
-                素敵な参加者たち
+                素敵な参加者たち(敬称略)
               </Typography>
               <TextField
                 sx={{ mb: 5 }}
