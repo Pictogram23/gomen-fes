@@ -198,6 +198,9 @@ export default function Home() {
                 <></>
               )}
             </Container>
+            <Typography display={'block'} variant='subtitle1' paddingTop={1} paddingBottom={1}>
+              参加者の中からランダムに1名表示されます
+            </Typography>
             <Typography variant='h4' color='red' paddingTop={10}>
               2024年9月20日〜23日開催予定！
             </Typography>
@@ -247,8 +250,11 @@ export default function Home() {
           <div id='member'>
             <Toolbar />
             <Container>
-              <Typography variant='h4' paddingBottom={3} paddingTop={3}>
+              <Typography variant='h4' paddingBottom={1} paddingTop={3}>
                 素敵な参加者たち(敬称略)
+              </Typography>
+              <Typography display={'block'} variant='subtitle1' paddingBottom={3} paddingTop={1}>
+                クリックで詳細が表示されます
               </Typography>
               <TextField
                 sx={{ mb: 5 }}
