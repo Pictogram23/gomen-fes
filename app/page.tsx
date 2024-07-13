@@ -21,6 +21,7 @@ import {
   useMediaQuery,
 } from '@mui/material'
 import Grid from '@mui/material/Grid'
+import { YouTubeEmbed } from '@next/third-parties/google'
 import { useEffect, useState } from 'react'
 import PosterCard from './_components/PosterCard'
 import 'fontsource-noto-sans-jp/500.css'
@@ -204,9 +205,10 @@ export default function Home() {
             <Typography variant='h4' color='red' paddingTop={10}>
               2024年9月20日〜23日開催予定！
             </Typography>
-            <Typography variant='h4' paddingTop={10}>
+            <Typography variant='h4' paddingTop={10} paddingBottom={3}>
               告知動画
             </Typography>
+            <YouTubeEmbed videoid='qnftxty_b8E' style='margin: auto; width: 90vw;' />
           </div>
           <div id='join'>
             <Container sx={{ paddingTop: 10 }}>
