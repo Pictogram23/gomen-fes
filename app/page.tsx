@@ -301,8 +301,8 @@ export default function Home() {
           </div>
           <div id='rule'>
             <Container sx={{ paddingTop: 10 }}>
-              <Link href='#' variant='h5'>
-                ルール(準備中)
+              <Link href='https://twipla.jp/events/612120' variant='h5'>
+                ルール
               </Link>
             </Container>
           </div>
