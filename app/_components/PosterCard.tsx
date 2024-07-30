@@ -30,6 +30,7 @@ import * as React from 'react'
 import NiconicoIcon from '../niconico.svg'
 
 interface PosterCardProps {
+  datetime: string
   name: string
   twitter_id: string
   roll: string
@@ -60,6 +61,7 @@ const theme = createTheme({
 })
 
 const PosterCard = ({
+  datetime,
   name,
   twitter_id,
   roll,
@@ -85,7 +87,7 @@ const PosterCard = ({
     'ニコニコ以外への投稿',
     'クレジットの記載',
     '収益化',
-    '応募後に投稿された曲',
+    '応募後に投稿された曲(応募日)',
     'オリジナルライセンス',
     'コメント',
     'パロディ可能な代表曲',
@@ -97,7 +99,7 @@ const PosterCard = ({
     others,
     credit,
     earning,
-    after,
+    after + '(' + datetime + ')',
     original,
     comment,
     best,

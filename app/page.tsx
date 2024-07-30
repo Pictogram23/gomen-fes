@@ -27,6 +27,7 @@ import PosterCard from './_components/PosterCard'
 import 'fontsource-noto-sans-jp/500.css'
 
 type Poster = {
+  datetime: string
   name: string
   twitter_id: string
   roll: string
@@ -179,6 +180,7 @@ export default function Home() {
             <Container sx={{ width: 382 }}>
               {pickUp ? (
                 <PosterCard
+                  datetime={pickUp.datetime}
                   name={pickUp.name}
                   twitter_id={pickUp.twitter_id}
                   roll={pickUp.roll}
@@ -276,6 +278,7 @@ export default function Home() {
                     return (
                       <Grid key={index}>
                         <PosterCard
+                          datetime={poster.datetime}
                           name={poster.name}
                           twitter_id={poster.twitter_id}
                           roll={poster.roll}
