@@ -206,7 +206,7 @@ export default function Home() {
               参加者の中からランダムに1名表示されます
             </Typography>
             <Typography variant='h4' color='red' paddingTop={10}>
-              {/* 2024年9月20日〜23日開催予定！ */}
+              2024年12月20日(金)18:00〜29日(日)24:00開催予定！
             </Typography>
             <Typography variant='h4' paddingTop={10} paddingBottom={3}>
               告知動画
