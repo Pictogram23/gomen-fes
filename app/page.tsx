@@ -211,7 +211,7 @@ export default function Home() {
             <Typography variant='h4' paddingTop={10} paddingBottom={3}>
               告知動画
             </Typography>
-            <YouTubeEmbed videoid='qnftxty_b8E' style='margin: auto; width: 90vw;' />
+            <YouTubeEmbed videoid='4rpKK1OkXzs' style='margin: auto; width: 90vw;' />
           </div>
           <div id='join'>
             <Container sx={{ paddingTop: 10 }}>
