@@ -215,14 +215,12 @@ export default function Home() {
           </div>
           <div id='join'>
             <Container sx={{ paddingTop: 10 }}>
-              <Link href='https://forms.gle/Hjzq8X5EYU72t8xRA' target='_blank' variant='h5'>
-                パロディ元「応募」はこちら！
-              </Link>
+              <Typography variant='h5'>
+                パロディ元の応募・推薦は受付終了致しました
+                <br />
+                たくさんのご応募ありがとうございました
+              </Typography>
             </Container>
-            <br />
-            <Link href='https://forms.gle/q3tGoMsgwjsxYnW5A' target='_blank' variant='h5'>
-              パロディ元「推薦」はこちら！
-            </Link>
           </div>
           <div id='about'>
             <Typography variant='h4' paddingTop={10}>
