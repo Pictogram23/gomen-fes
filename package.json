@@ -17,6 +17,7 @@
     "@mui/material": "^5.15.18",
     "@next/third-parties": "^14.2.5",
     "fontsource-noto-sans-jp": "^4.0.0",
+    "gomen-fes": "file:",
     "next": "14.2.3",
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0"
