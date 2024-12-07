@@ -212,6 +212,8 @@ export default function Home() {
               告知動画
             </Typography>
             <YouTubeEmbed videoid='4rpKK1OkXzs' style='margin: auto; width: 90vw;' />
+            <br />
+            <YouTubeEmbed videoid='q9wAdqAW3Bg' style='margin: auto; width: 90vw;' />
           </div>
           <div id='join'>
             <Container sx={{ paddingTop: 10 }}>
